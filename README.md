@@ -1,7 +1,15 @@
 # Tree Species
-A small app that let you see a list of tree species saved in a database.
+A small app that let you see a list of tree species saved in a database (mysql).
+
+## Server client
+The server provide a simple interface (React) to see the tree species. The view is paginated to 3 species per page.
 
 ![Tree Species](assets/app.png)
+
+## Forest Admin
+Also the server can be binded with a Forest Admin interface.
+
+![View in Forest](assets/view_forest.png)
 
 # Prepare the App
 
@@ -60,12 +68,25 @@ export PORT=3000
 # Create the table if don't exist
 # Remove the previous values and add the template ones
 export CREATE_DB=1
-node tree-species/bin/www
+# If you want to launch the Forest API
+export FOREST=1
+# Create a [new project](http://app.forestadmin.com)
+# Select Express/Sequelize
+# Get your personal keys
+export FOREST_ENV_SECRET= ***
+export FOREST_AUTH_SECRET= ****
+
+cd tree-species/ && node bin/www
 ```
+# REST API
+ - `/api/species/count` -> return # entries in the table
+ - `/api/species` -> return all the entries species in the table
+ - `/api/species/page/:nb` -> return a page (3 entries/page) of the species in the table
 
 # Dependencies 
  - Node
  - Express
  - MySQL
  - React
+ - Forest (liana: Express/Sequelize) (Optional)
  
