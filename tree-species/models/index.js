@@ -22,7 +22,7 @@ sequelize
     console.error('Unable to connect to the database:', err);
   });
 
-const TreeSpecies = sequelize.define('tree_species', {
+const TreeSpecies = sequelize.define(db.database, {
   species: Sequelize.STRING
 }, {
   timestamps: false,
