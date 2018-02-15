@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import TreeSpecies from './TreeSpecies';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(<TreeSpecies />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
