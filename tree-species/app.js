@@ -23,6 +23,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'client/build')));
 
+if ( process.env.FOREST ) {
+  app.use(require('forest-express-sequelize').init({
+    modelsDir: __dirname + '/models', // Your models directory.
+    envSecret: process.env.FOREST_ENV_SECRET,
+    authSecret: process.env.FOREST_AUTH_SECRET,
+    sequelize: require('./models/index.js').sequelize // The sequelize database connection.
+  }));
+}
+
 app.use('/', index);
 app.use('/api', api);
 
