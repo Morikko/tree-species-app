@@ -11,11 +11,6 @@ var api = require('./routes/api');
 
 var app = express();
 
-db.connection.connect(function(err) {
-  if (err) throw err
-  console.log('You are now connected to your MySQL database...')
-})
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
