@@ -44,6 +44,17 @@
 
 .commands input {
   width: 100px;
+  padding: 5px;
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.commands input:disabled {
+  background-color: rgb(0, 102, 0, 0.3);
+  color: white;
+  cursor: default;
 }
 
 .species-index {
