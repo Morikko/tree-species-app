@@ -13,8 +13,41 @@
   width: 100%;
 }
 
+.species-list {
+  list-style-type: none;
+  min-width: 400px;
+}
+
+.species-list li {
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+.species-list li:nth-child(odd) {
+  background-color: #d6f5d6;
+}
+
+.species-list li:nth-child(even) {
+  background-color: #ebfaeb;
+}
+
+.commands {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-around;
+}
+
 .commands input {
-  width: 150px;
+  width: 100px;
+}
+
+.species-index {
+  margin-bottom: 10px;
 }
 
 .App-title {

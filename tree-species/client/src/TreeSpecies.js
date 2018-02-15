@@ -45,12 +45,12 @@ class TreeSpecies extends Component {
     if ( this.state.count > 0) {
       let start = 1+this.PAGE_SIZE*this.state.page;
       let end = Math.min(this.PAGE_SIZE+this.PAGE_SIZE*this.state.page, this.state.count)
-      index = <div>{start}-{end}/{this.state.count}</div>
+      index = <div className="species-index">{start}-{end}/{this.state.count}</div>
 
       prevEnable = start > this.PAGE_SIZE;
       nextEnable = end < this.state.count;
     } else {
-      index = <div>No tree species...</div>
+      index = <div className="species-index">No tree species...</div>
       prevEnable = false;
       nextEnable = false;
     }
